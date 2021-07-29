@@ -1,14 +1,14 @@
-import React, { Component } from 'react';
-import Container from '../components/Container';
+import React, { useState } from 'react';
+import SubjectList from '../components/SubjectList';
+import Data from '../data/appData.json'
 
-class MainPage extends Component {
-  render () {
+const MainPage = () => {
+  const [flashcards, setFlashcards] = useState(Data)
+
     return(
-      <Container>
-        <div>Hello</div>
-      </Container>
+      <SubjectList subjectlist={flashcards} />
     )
-  }
+
 }
 
 export default MainPage;

@@ -1,0 +1,14 @@
+.subject-title {
+  border: 1px dotted blue;
+  text-align: center;
+  font-size: 3em;
+}
+
+.subject-list-container {
+  padding: 3rem 0;
+}
+
+.subject-card {
+  border: 1px solid red;
+  text-align: center;
+}
