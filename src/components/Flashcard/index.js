@@ -1,9 +1,21 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { useLocation, useParams } from 'react-router-dom';
 
-const Flashcard = (props) => {
-  return(
+
+const Flashcard = () => {
+  const location = useLocation();
+  const { subject } = location.state;
+  const [question, setQuestion] = useState(null);
+  console.log(JSON.stringify(subject));
+
+  return( 
     <div>
-      this is the card
+      <h3>name: {subject.name} </h3>
+      <div>
+        {subject.card.map( result => (
+          result.question
+        ))}
+      </div>
     </div>
   )
 }

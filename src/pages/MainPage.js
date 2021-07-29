@@ -4,7 +4,7 @@ import Data from '../data/appData.json'
 
 const MainPage = () => {
   const [flashcards, setFlashcards] = useState(Data)
-
+  
     return(
       <SubjectList subjectlist={flashcards} />
     )

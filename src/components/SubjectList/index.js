@@ -1,5 +1,6 @@
 import React from 'react';
 import "./style.css"
+import SubjectCard from '../SubjectCard';
 
 const SubjectList = ( {subjectlist} ) => {
 
@@ -11,13 +12,9 @@ const SubjectList = ( {subjectlist} ) => {
       <div className="subject-list-container">
         <div className="columns is-multiline">
           {
-            subjectlist.map( subject => (
-              <div className="column is-one-quarter card subject-card" key={subject.id}>
-                <div className="card-content">
-                  <p>{subject.name}</p>
-                </div>
-              </div>
-            ))
+            subjectlist.map( subject => {
+              return <SubjectCard subject={subject} key={subject.id} />
+            })
           }
         </div>
       </div>
