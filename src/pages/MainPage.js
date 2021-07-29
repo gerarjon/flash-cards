@@ -3,7 +3,7 @@ import SubjectList from '../components/SubjectList';
 import Data from '../data/appData.json'
 
 const MainPage = () => {
-  const [flashcards, setFlashcards] = useState(Data)
+  const [flashcards] = useState(Data)
   
     return(
       <SubjectList subjectlist={flashcards} />
