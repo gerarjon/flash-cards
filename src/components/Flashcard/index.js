@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
+import './style.css'
 
 // Shuffle function
 // const shuffle = (array) => {
@@ -17,42 +18,77 @@ import { useLocation } from 'react-router-dom';
 //   return array;
 // }
 
+
 const Flashcard = () => {
   const location = useLocation();
   const { subject } = location.state;
   const questionArray = subject.card;
   const [questionList, setQuestionList] = useState(questionArray);
-  const [currentQuestion, setCurrentQuestion] = useState(0);
-
-  //Shuffle the question list and set to new array
-  // useEffect(() => {
-  //   const shuffledArray = shuffle(questionArray);
-  //   setQuestionList(shuffledArray);
-  // }, [])
-
-  //Next Question on click
-  const nextQuestionClick = () => {
-    const nextQuestion = currentQuestion + 1;
-    if (nextQuestion < questionList.length) {
-      setCurrentQuestion(nextQuestion);
-    } else {
-      alert('thats the end');
-    }
-  }
+  const [currentQuestion, setCurrentQuestion] = useState(() => {
+    const initialState = getRandomQuestion(questionList);
+    return initialState;
+  });
+  const [counter, setCounter] = useState(0);
+  const [flip, setFlip] = useState(false);
 
   useEffect(() => {
-    console.log(currentQuestion);
-  }, [currentQuestion])
+    setQuestionList(questionArray.map((questionItem, index) => {
+      return {
+        id: questionItem.id,
+        question: questionItem.question,
+        answer: questionItem.answer
+      }
+    }))
+  }, [])
+
+  useEffect(() => {
+    console.log(currentQuestion)
+  }, [currentQuestion]);
+
+  const showAnswerClick = () => {
+
+  }
+
+  const nextQuestionClick = () => {
+    if ( counter < questionList.length) {
+      console.log(questionList.length)
+      setCounter(counter + 1);
+      setCurrentQuestion(getRandomQuestion(questionList));
+      console.log(counter);
+    } else {
+      
+      setCounter(0);
+    }
+  }
 
   return( 
     <div>
       <h3>name: {subject.name} </h3>
-      <div>
-        {questionList[currentQuestion].id}
+      <div className="flashcard">
+        <div className="flashcard-text" onClick={() => setFlip(!flip)}>
+          {flip ? currentQuestion.answer : currentQuestion.question}
+        </div>
+        <div className="flashcard-button-container">
+          <button onClick={nextQuestionClick}>{counter < questionList.length ? 'Next Question' : 'Restart'}</button>
+        </div>
       </div>
-      <button onClick={() => nextQuestionClick()}>Next Question</button>
     </div>
   )
 }
+
+// const sampleArray = [
+//   {
+//     id: 1, 
+//     question: 'There is currently no Question',
+//     answer: '!'
+//   },
+// ]
+
+// Get RandomCard function
+const getRandomQuestion = (currentQuestions) => {
+  const question = currentQuestions[Math.floor(Math.random() * currentQuestions.length)];
+  return(question);
+} 
+
 
 export default Flashcard;

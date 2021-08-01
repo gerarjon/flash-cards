@@ -1,0 +1,14 @@
+.flashcard {
+  margin: auto;
+  width: 100%;
+  border: 1px solid red;
+  text-align: center;
+}
+
+.flashcard-text {
+  padding: 10rem 5rem;
+}
+
+.flashcard-button-container {
+  padding: 2rem;
+}
