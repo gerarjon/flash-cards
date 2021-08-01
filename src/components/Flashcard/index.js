@@ -63,7 +63,9 @@ const Flashcard = () => {
 
   return( 
     <div>
-      <h3>name: {subject.name} </h3>
+      <div className="subject-title">
+        <h3>{subject.name} </h3>
+      </div>
       <div className="flashcard">
         <div className="flashcard-text" onClick={() => setFlip(!flip)}>
           {flip ? currentQuestion.answer : currentQuestion.question}
