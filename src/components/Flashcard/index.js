@@ -47,14 +47,12 @@ const Flashcard = () => {
 
   const nextQuestionClick = () => {
     if ( counter < questionList.length) {
-      console.log(questionList.length)
       setCounter(counter + 1);
       setCurrentQuestion(getRandomQuestion(questionList));
       setFlip(false);
-      console.log(counter);
     } else {
-      
       setCounter(0);
+      setFlip(false);
     }
   }
 
