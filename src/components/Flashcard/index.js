@@ -45,15 +45,12 @@ const Flashcard = () => {
     console.log(currentQuestion)
   }, [currentQuestion]);
 
-  const showAnswerClick = () => {
-
-  }
-
   const nextQuestionClick = () => {
     if ( counter < questionList.length) {
       console.log(questionList.length)
       setCounter(counter + 1);
       setCurrentQuestion(getRandomQuestion(questionList));
+      setFlip(false);
       console.log(counter);
     } else {
       
@@ -67,8 +64,10 @@ const Flashcard = () => {
         <h3>{subject.name} </h3>
       </div>
       <div className="flashcard">
-        <div className="flashcard-text" onClick={() => setFlip(!flip)}>
-          {flip ? currentQuestion.answer : currentQuestion.question}
+        <div className="flashcard-container" onClick={() => setFlip(!flip)}>
+          <div className="flashcard-text">
+            {flip ? currentQuestion.answer : currentQuestion.question}
+          </div>
         </div>
         <div className="flashcard-button-container">
           <button onClick={nextQuestionClick}>{counter < questionList.length ? 'Next Question' : 'Restart'}</button>

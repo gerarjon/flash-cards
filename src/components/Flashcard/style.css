@@ -1,14 +1,28 @@
 .flashcard {
   margin: 1rem auto;
   width: 100%;
-  border: 1px solid red;
   text-align: center;
 }
 
+.flashcard-container {
+  cursor: pointer;
+  width: 500px;
+  height: 400px;
+  margin: auto;
+  border-radius: 3%;
+  box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.3)
+}
+
 .flashcard-text {
-  padding: 10rem 5rem;
+  padding-top: 35%;
 }
 
 .flashcard-button-container {
   padding: 2rem;
 }
+
+@media only screen and (max-width: 600px) {
+  .flashcard-container, .flashcard-text{
+    width: 100%;
+  }
+} 

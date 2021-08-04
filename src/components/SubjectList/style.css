@@ -1,5 +1,4 @@
 .subject-title {
-  border: 1px dotted blue;
   text-align: center;
   font-size: 3em;
 }
@@ -9,6 +8,6 @@
 }
 
 .subject-card {
-  border: 1px solid red;
+  border: 1px solid rgb(0, 0, 0);
   text-align: center;
 }

@@ -11,7 +11,7 @@ export default function SubjectCard( {subject} ) {
   }
 
   return (
-    <div className="column is-one-quarter card subject-card">
+    <div className="card subject-card">
       <Link to={newTo}>
         <div className="card-content">
           <p>{subject.name}</p>

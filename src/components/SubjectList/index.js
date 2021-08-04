@@ -11,11 +11,15 @@ const SubjectList = ( {subjectlist} ) => {
       </div>
       <div className="subject-list-container">
         <div className="columns is-multiline">
-          {
-            subjectlist.map( subject => {
-              return <SubjectCard subject={subject} key={subject.id} />
-            })
-          }
+            {
+              subjectlist.map( subject => {
+                return (
+                 <div className="column is-one-quarter" key={subject.id}>
+                  <SubjectCard subject={subject} />
+                 </div> 
+                 )
+              })
+            }
         </div>
       </div>
     </>

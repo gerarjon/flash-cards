@@ -6,7 +6,7 @@ export default function Navbar() {
   <nav className="navbar" role="navigation" aria-label="main navigation">
     <div className="navbar-brand">
       <div className="navbar-item">
-        <Link to="/">hello</Link>
+        <Link to="/">home page</Link>
       </div>
     </div>
   </nav>
