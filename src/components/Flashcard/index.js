@@ -30,6 +30,7 @@ const Flashcard = () => {
   });
   const [counter, setCounter] = useState(0);
   const [flip, setFlip] = useState(false);
+  const [reviewQuestionList, setReviewQuestionList] = useState([])
 
   useEffect(() => {
     setQuestionList(questionArray.map((questionItem, index) => {
@@ -43,6 +44,7 @@ const Flashcard = () => {
 
   useEffect(() => {
     console.log(currentQuestion)
+    console.log(reviewQuestionList)
   }, [currentQuestion]);
 
   const nextQuestionClick = () => {
@@ -56,6 +58,11 @@ const Flashcard = () => {
     }
   }
 
+  const reviewQuestionClick = () => {
+    setReviewQuestionList(reviewQuestionList => [...reviewQuestionList, currentQuestion])
+    nextQuestionClick();
+  }
+
   return( 
     <div>
       <div className="hero is-small">
@@ -66,11 +73,12 @@ const Flashcard = () => {
       <div className="flashcard">
         <div className="flashcard-container" onClick={() => setFlip(!flip)}>
           <div className="flashcard-text">
-            {flip ? currentQuestion.answer : currentQuestion.question}
+            {flip ? <div className="front">{currentQuestion.answer}</div> : <div className="back">{currentQuestion.question}</div>}
           </div>
         </div>
         <div className="flashcard-button-container">
-          <button onClick={nextQuestionClick}>{counter < questionList.length ? 'Next Question' : 'Restart'}</button>
+          <button className="button" onClick={nextQuestionClick}>{counter < questionList.length ? 'Next Question' : 'Restart'}</button>
+          <button className="button" onClick={reviewQuestionClick}>trash</button>
         </div>
       </div>
     </div>
