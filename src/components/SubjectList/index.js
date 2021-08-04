@@ -6,9 +6,6 @@ const SubjectList = ( {subjectlist} ) => {
 
   return (
     <>
-      <div className="subject-title">
-        <p>Subjects</p>
-      </div>
       <div className="subject-list-container">
         <div className="columns is-multiline">
             {

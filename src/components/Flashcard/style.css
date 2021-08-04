@@ -10,11 +10,12 @@
   height: 400px;
   margin: auto;
   border-radius: 3%;
-  box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.3)
+  box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.15)
 }
 
 .flashcard-text {
-  padding-top: 35%;
+  font-size: 2rem;
+  padding-top: 30%;
 }
 
 .flashcard-button-container {
@@ -24,5 +25,13 @@
 @media only screen and (max-width: 600px) {
   .flashcard-container, .flashcard-text{
     width: 100%;
+  }
+
+  .flashcard-container {
+    box-shadow: none;
+  }
+
+  .flashcard-text {
+    padding-top: 40%;
   }
 } 

@@ -60,8 +60,10 @@ const Flashcard = () => {
 
   return( 
     <div>
-      <div className="subject-title">
-        <h3>{subject.name} </h3>
+      <div className="hero is-small">
+        <div className="hero-body">
+          <p className="title">{subject.name}</p>
+        </div>
       </div>
       <div className="flashcard">
         <div className="flashcard-container" onClick={() => setFlip(!flip)}>
