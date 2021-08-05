@@ -36,6 +36,7 @@ const Flashcard = () => {
 
   useEffect(() => {
     console.log(questionList);
+    console.log(questionList.length)
     console.log(currentQuestion)
     console.log(reviewQuestionList)
     console.log(index)
@@ -48,16 +49,22 @@ const Flashcard = () => {
       setCurrentQuestion(questionList[i + 1]);
       setIndex(index => index + 1)
       setFlip(false);
-    } else {
+    } else if (reviewQuestionList.length > 0) {
       setQuestionList(reviewQuestionList)
       setReviewQuestionList([])
+      setCurrentQuestion(questionList[0])
+      setIndex(0)
       setFlip(false);
+    } else {
+      restartQuestionClick()
     }
   }
 
-  // Sets questionList with fresh array
+  // resets questionList, index, and sets currentQuestion to first question
   const restartQuestionClick = () => {
     setQuestionList(shuffle(questionArray));
+    setCurrentQuestion(questionList[0])
+    setIndex(0)
   }
 
   const reviewQuestionClick = () => {
@@ -80,7 +87,7 @@ const Flashcard = () => {
         </div>
         <div className="flashcard-button-container">
           <button className="button" onClick={nextQuestionClick}>{index < questionList.length ? 'Next Question' : 'Restart'}</button>
-          <button className="button" onClick={reviewQuestionClick}>trash</button>
+          {currentQuestion ? <button className="button" onClick={reviewQuestionClick}>trash</button> : ''}
         </div>
       </div>
     </div>
