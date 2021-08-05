@@ -1,37 +1,242 @@
 [
   { 
     "id": 1.1,
-    "name": "subject1",
+    "name": "Hiragana",
     "card": [
     {
       "id":1,
-      "question": "question1?",
-      "answer": "answer"
+      "question": "あ",
+      "answer": "a"
     },
     {
       "id":2,
-      "question": "question?2",
-      "answer": "answer"
+      "question": "い",
+      "answer": "i"
     },
     {
     "id":3,
-      "question": "question?3",
-      "answer": "answer"
+      "question": "う",
+      "answer": "u"
     },
     {
     "id":4,
-      "question": "question?4",
-      "answer": "answer"
+      "question": "え",
+      "answer": "e"
     },
     {
     "id":5,
-      "question": "question?5",
-      "answer": "answer"
+      "question": "お",
+      "answer": "o"
     },
     {
     "id":6,
-      "question": "question?6",
-      "answer": "answer"
+      "question": "か",
+      "answer": "ka"
+    },
+    {
+    "id":7,
+      "question": "き",
+      "answer": "ki"
+    },
+    {
+    "id":8,
+      "question": "く",
+      "answer": "ku"
+    },
+    {
+    "id":9,
+      "question": "け",
+      "answer": "ke"
+    },
+    {
+    "id":10,
+      "question": "こ",
+      "answer": "ko"
+    },
+    {
+    "id":11,
+      "question": "さ",
+      "answer": "sa"
+    },
+    {
+    "id":12,
+      "question": "し",
+      "answer": "shi"
+    },
+    {
+    "id":13,
+      "question": "す",
+      "answer": "su"
+    },
+    {
+    "id":14,
+      "question": "せ",
+      "answer": "se"
+    },
+    {
+    "id":15,
+      "question": "そ",
+      "answer": "so"
+    },
+    {
+    "id":16,
+      "question": "た",
+      "answer": "ta"
+    },
+    {
+    "id":17,
+      "question": "ち",
+      "answer": "chi"
+    },
+    {
+    "id":18,
+      "question": "つ",
+      "answer": "tsu"
+    },
+    {
+    "id":19,
+      "question": "て",
+      "answer": "te"
+    },
+    {
+    "id":20,
+      "question": "と",
+      "answer": "to"
+    },
+    {
+    "id":21,
+      "question": "な",
+      "answer": "na"
+    },
+    {
+    "id":22,
+      "question": "に",
+      "answer": "ni"
+    },
+    {
+    "id":23,
+      "question": "ぬ",
+      "answer": "nu"
+    },
+    {
+    "id":24,
+      "question": "ね",
+      "answer": "ne"
+    },
+    {
+    "id":25,
+      "question": "の",
+      "answer": "no"
+    },
+    {
+    "id":26,
+      "question": "は",
+      "answer": "ha"
+    },
+    {
+    "id":27,
+      "question": "ひ",
+      "answer": "hi"
+    },
+    {
+    "id":28,
+      "question": "ふ",
+      "answer": "fu"
+    },
+    {
+    "id":29,
+      "question": "へ",
+      "answer": "he"
+    },
+    {
+    "id":30,
+      "question": "ほ",
+      "answer": "ho"
+    },
+    {
+    "id":31,
+      "question": "ま",
+      "answer": "ma"
+    },
+    {
+    "id":32,
+      "question": "み",
+      "answer": "mi"
+    },
+    {
+    "id":33,
+      "question": "む",
+      "answer": "mu"
+    },
+    {
+    "id":34,
+      "question": "め",
+      "answer": "me"
+    },
+    {
+    "id":35,
+      "question": "も",
+      "answer": "mo"
+    },
+    {
+    "id":36,
+      "question": "か",
+      "answer": "ka"
+    },
+    {
+    "id":37,
+      "question": "や",
+      "answer": "ya"
+    },
+    {
+    "id":38,
+      "question": "ゆ",
+      "answer": "yu"
+    },
+    {
+    "id":39,
+      "question": "よ",
+      "answer": "yo"
+    },
+    {
+    "id":40,
+      "question": "ら",
+      "answer": "ra"
+    },
+    {
+    "id":41,
+      "question": "り",
+      "answer": "ri"
+    },
+    {
+    "id":42,
+      "question": "る",
+      "answer": "ru"
+    },
+    {
+    "id":43,
+      "question": "れ",
+      "answer": "re"
+    },
+    {
+    "id":44,
+      "question": "ろ",
+      "answer": "ro"
+    },
+    {
+    "id":45,
+      "question": "わ",
+      "answer": "wa"
+    },
+    {
+    "id":46,
+      "question": "を",
+      "answer": "wo"
+    },
+    {
+    "id":47,
+      "question": "ん",
+      "answer": "nn"
     }
     ]
   },

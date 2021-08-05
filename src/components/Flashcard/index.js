@@ -43,6 +43,7 @@ const Flashcard = () => {
   }, [])
 
   useEffect(() => {
+    console.log(questionList);
     console.log(currentQuestion)
     console.log(reviewQuestionList)
   }, [currentQuestion]);
@@ -54,6 +55,7 @@ const Flashcard = () => {
       setFlip(false);
     } else {
       setCounter(0);
+      setQuestionList(reviewQuestionList)
       setFlip(false);
     }
   }
