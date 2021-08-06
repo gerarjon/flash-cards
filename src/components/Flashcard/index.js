@@ -36,21 +36,15 @@ const Flashcard = () => {
   // for SentenceCard
   const [submittedAnswer, setSubmittedAnswer] = useState();
   const [showAnswer, setShowAnswer] = useState(false)
+  const [isCorrect, setIsCorrect] = useState('')
 
   // Load questionArray on start
   useEffect(()=>{
     setQuestionList(shuffle(questionArray))
     setCurrentQuestion(questionList[0])
-  },[])
+  },[]) // eslint-disable-line
 
-  // useEffect(() => {
-  //   console.log(questionList);
-  //   console.log(questionList.length)
-  //   console.log(currentQuestion)
-  //   console.log(reviewQuestionList)
-  //   console.log(index)
-  // }, [questionList, currentQuestion, reviewQuestionList, index]);
-
+  // go to next question function
   const nextQuestionClick = () => {
     let i = questionList.indexOf(questionList[index])
 
@@ -58,17 +52,15 @@ const Flashcard = () => {
       setCurrentQuestion(questionList[i + 1]);
       setIndex(index => index + 1);
       setCount(count => count + 1);
-      if (flip) {
-        setFlip(false);
-      };
+      setFlip(false)
+      setIsCorrect('')
+      setShowAnswer(false)
+      setSubmittedAnswer('')
     } else if (reviewQuestionList.length > 0) {
       setQuestionList(reviewQuestionList);
       setReviewQuestionList([]);
       setCurrentQuestion(questionList[0]);
       setIndex(0);
-      if (flip) {
-        setFlip(false);
-      }
     } else {
       restartQuestionClick()
     }
@@ -80,6 +72,7 @@ const Flashcard = () => {
     setCurrentQuestion(questionList[0])
     setIndex(0)
     setCount(0)
+    setIsCorrect('')
   }
 
   // adds current question to array of questions to review
@@ -95,10 +88,20 @@ const Flashcard = () => {
   }
 
   const handleFormSubmit = (e) => {
-    console.log(submittedAnswer)
     e.preventDefault();
     if (submittedAnswer) {
+      handleCheckAnswer(submittedAnswer)
       setShowAnswer(true)
+    }
+  }
+
+  const handleCheckAnswer = (ans) => {
+    let newAns = ans.replace(/[.,/#!$%^&*;:{}=\-_`~()@?]/g,"").replace(/\s{2,}/g," ").toLowerCase();
+    let currentAns = currentQuestion.answer.replace(/[.,/#!$%^&*;:{}=\-_`~()@?]/g,"").replace(/\s{2,}/g," ").toLowerCase();
+    if (newAns === currentAns) {
+      setIsCorrect(true)
+    } else {
+      setIsCorrect(false)
     }
   }
 
@@ -120,18 +123,20 @@ const Flashcard = () => {
           flip={flip}
           handleFlip={handleFlip}
           currentQuestion={currentQuestion}
-          nextQuestionClick={nextQuestionClick}
-          index={index}
-          questionList={questionList}
-          reviewQuestionClick={reviewQuestionClick}
         /> :
         <SentenceCard
           currentQuestion={currentQuestion}
           handleFormSubmit={handleFormSubmit}
           handleAnswerOnChange={handleAnswerOnChange}
           showAnswer={showAnswer}
+          isCorrect={isCorrect}
+          submittedAnswer={submittedAnswer}
         />
         }
+        <div className="flashcard-button-container">
+          <button className="button" onClick={nextQuestionClick}>{index < questionList.length ? 'Next Question' : 'Restart'}</button>
+          {currentQuestion ? <button className="button" onClick={reviewQuestionClick}>trash</button> : ''}
+        </div>
       </div>
     </div>
   )
