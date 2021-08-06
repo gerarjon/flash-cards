@@ -311,43 +311,43 @@
   { 
     "id": 1.4,
     "type":"flashcard",
-    "name": "subject4",
+    "name": "Phrases(Flashcard)",
     "card": [
     {
       "id":1,
-      "question": "question?",
-      "answer": "answer"
+      "question": "これは　だれの　かばんですか。",
+      "answer": "Whose bag is this?"
     },
     {
       "id":2,
-      "question": "question?",
-      "answer": "answer"
+      "question": "とんかつは　さかなじゃないですよ。",
+      "answer": "Tonkatsu is not fish"
     },
     {
       "id":3,
-      "question": "question?",
-      "answer": "answer"
+      "question": "わかりました。",
+      "answer": "I understand."
     }]
   },
   { 
     "id": 1.5,
     "type":"submit",
-    "name": "subject5",
+    "name": "Phrases(Submit)",
     "card": [
     {
       "id":1,
       "question": "これは　だれの　かばんですか。",
-      "answer": ["Whose bag is this?"]
+      "answer": "Whose bag is this?"
     },
     {
       "id":2,
       "question": "とんかつは　さかなじゃないですよ。",
-      "answer": ["Tonkatsu is not fish", "Pork cutlet is not fish"]
+      "answer": "Tonkatsu is not fish"
     },
     {
       "id":3,
       "question": "わかりました。",
-      "answer": ["I understand", "I understood"]
+      "answer": "I understand."
     }]
   }
 ]
