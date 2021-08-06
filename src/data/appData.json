@@ -242,38 +242,39 @@
   },
   { 
     "id": 1.2,
-    "name": "subject2",
+    "name": "Food",
     "card": [
     {
       "id":1,
-      "question": "question?1",
-      "answer": "answer"
+      "question": "おいしい",
+      "answer": "delicious"
     },
     {
       "id":2,
-      "question": "question?2",
-      "answer": "answer"
+      "question": "さかな",
+      "answer": "fish"
     },
     {
       "id":3,
-      "question": "question?3",
-      "answer": "answer"
+      "question": "とんかつ",
+      "answer": "pork cutlet"
     },
     {
       "id":4,
-      "question": "question?4",
-      "answer": "answer"
+      "question": "メニュー",
+      "answer": "menu"
     },
     {
       "id":5,
-      "question": "question?5",
-      "answer": "answer"
+      "question": "やさい",
+      "answer": "vegetable"
     },
     {
       "id":6,
-      "question": "question?6",
-      "answer": "answer"
-    }]
+      "question":"にく",
+      "answer":"meat"
+    }
+    ]
   },
   { 
     "id": 1.3,
