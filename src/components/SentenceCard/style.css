@@ -1,0 +1,25 @@
+.flashcard-submit-container {
+  width: 600px;
+  height: 400px;
+  margin: auto;
+  padding: 0 1rem;
+  background-color: rgb(255, 255, 255);
+  border-radius: 3%;
+  box-shadow: 5px 5px 30px 5px rgba(0, 0, 0, 0.15)
+}
+
+.flashcard-submit-question, .flashcard-submit-answer {
+  margin: 1rem 0;
+  font-size: 2rem;
+}
+
+.flashcard-submit-form {
+  text-align: left;
+}
+
+@media only screen and (max-width: 600px) {
+  .flashcard-submit-container {
+    padding-top: 1%;
+    width: 100%;
+  }
+} 
