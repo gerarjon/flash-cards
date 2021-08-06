@@ -15,6 +15,7 @@
 }
 
 .flashcard-submit-form {
+  width: 568px;
   text-align: left;
 }
 
@@ -25,5 +26,8 @@
   }
   .flashcard-submit-question, .flashcard-submit-answer {
     height: 95px;
+  }
+  .flashcard-submit-form {
+    width: 100%;
   }
 } 
