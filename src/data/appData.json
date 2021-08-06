@@ -278,22 +278,31 @@
   },
   { 
     "id": 1.3,
-    "name": "subject3",
+    "name": "Places",
     "card": [
     {
       "id":1,
-      "question": "question?",
-      "answer": "answer"
+      "question": "きっさてん",
+      "answer": "cafe",
+      "english": "kissaten"
     },
     {
       "id":2,
-      "question": "question?",
-      "answer": "answer"
+      "question": "ぎんこう",
+      "answer": "bank",
+      "english": "ginkou"
     },
     {
       "id":3,
-      "question": "question?",
-      "answer": "answer"
+      "question": "としょかん",
+      "answer": "library",
+      "english": "toshokan"
+    },
+    {
+      "id":4,
+      "question": "ゆうびんきょく",
+      "answer": "post office",
+      "english": "yuubinkyoku"
     }]
   },
   { 
