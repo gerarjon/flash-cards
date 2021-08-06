@@ -34,7 +34,7 @@ const Flashcard = () => {
   const [flip, setFlip] = useState(false);
 
   // for SentenceCard
-  const [submittedAnswer, setSubmittedAnswer] = useState();
+  const [submittedAnswer, setSubmittedAnswer] = useState('');
   const [showAnswer, setShowAnswer] = useState(false)
   const [isCorrect, setIsCorrect] = useState('')
 
