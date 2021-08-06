@@ -1,28 +1,29 @@
 import React from 'react'
 import './style.css'
 
-const SentenceCard = ({ currentQuestion }) => {
+const SentenceCard = ({ currentQuestion, handleFormSubmit, handleAnswerOnChange, showAnswer }) => {
   return(
     <div className="flashcard-submit-container columns is-multiline">
       <div className="flashcard-submit-question column is-full">
         {currentQuestion ? currentQuestion.question : 'Loading...'}
       </div>
       <div className="flashcard-submit-answer column is-full">
-        {currentQuestion ? currentQuestion.answer : ''}
+        {currentQuestion && showAnswer ? currentQuestion.answer : ''}
       </div>
-      <div className="flashcard-submit-form column is-full">
+      
+      <form className="flashcard-submit-form column is-full" onSubmit={handleFormSubmit}>
         <div className="field">
-          <label className="label">Translate in English</label>
+          <label className="label">Translate to English</label>
           <div className="control">
-            <input className="input" type="text" placeholder="e.g. I am Takeshi" />
+            <input className="input" type="text" onChange={handleAnswerOnChange} placeholder="e.g. I am Takeshi" />
           </div>
         </div>
         <div className="field">
           <div className="control">
-              <button className="button is-primary">Submit</button>
+              <button className="button is-primary" type="submit">Submit</button>
           </div>
         </div>
-      </div>
+      </form>
     </div>
   )
 }

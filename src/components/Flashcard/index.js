@@ -26,10 +26,16 @@ const Flashcard = () => {
   const [questionList, setQuestionList] = useState(questionArray);
   const [currentQuestion, setCurrentQuestion] = useState(null);
   const [index, setIndex] = useState(0);
-  const [flip, setFlip] = useState(false);
   const [reviewQuestionList, setReviewQuestionList] = useState([])
   const [count, setCount] = useState(0);
   const [total] = useState(questionArray.length)
+
+  // for FlashcardCard
+  const [flip, setFlip] = useState(false);
+
+  // for SentenceCard
+  const [submittedAnswer, setSubmittedAnswer] = useState();
+  const [showAnswer, setShowAnswer] = useState(false)
 
   // Load questionArray on start
   useEffect(()=>{
@@ -50,15 +56,19 @@ const Flashcard = () => {
 
     if ( i >= 0 && i < questionList.length) {
       setCurrentQuestion(questionList[i + 1]);
-      setIndex(index => index + 1)
-      setCount(count => count + 1)
-      setFlip(false);
+      setIndex(index => index + 1);
+      setCount(count => count + 1);
+      if (flip) {
+        setFlip(false);
+      };
     } else if (reviewQuestionList.length > 0) {
       setQuestionList(reviewQuestionList);
       setReviewQuestionList([]);
       setCurrentQuestion(questionList[0]);
       setIndex(0);
-      setFlip(false);
+      if (flip) {
+        setFlip(false);
+      }
     } else {
       restartQuestionClick()
     }
@@ -79,10 +89,21 @@ const Flashcard = () => {
     nextQuestionClick();
   }
 
-
   // changes state of flip to opposite
   const handleFlip = () => {
     setFlip(!flip)
+  }
+
+  const handleFormSubmit = (e) => {
+    console.log(submittedAnswer)
+    e.preventDefault();
+    if (submittedAnswer) {
+      setShowAnswer(true)
+    }
+  }
+
+  const handleAnswerOnChange = (e) => {
+    setSubmittedAnswer(e.target.value)
   }
 
   return( 
@@ -106,6 +127,9 @@ const Flashcard = () => {
         /> :
         <SentenceCard
           currentQuestion={currentQuestion}
+          handleFormSubmit={handleFormSubmit}
+          handleAnswerOnChange={handleAnswerOnChange}
+          showAnswer={showAnswer}
         />
         }
       </div>
