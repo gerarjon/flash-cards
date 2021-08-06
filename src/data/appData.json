@@ -344,45 +344,5 @@
       "question": "question?",
       "answer": "answer"
     }]
-  },
-  { 
-    "id": 1.6,
-    "name": "subject6",
-    "card": [
-    {
-      "id":1,
-      "question": "question?",
-      "answer": "answer"
-    },
-    {
-      "id":2,
-      "question": "question?",
-      "answer": "answer"
-    },
-    {
-      "id":3,
-      "question": "question?",
-      "answer": "answer"
-    }]
-  },
-  { 
-    "id": 1.7,
-    "name": "subject7",
-    "card": [
-    {
-      "id":1,
-      "question": "question?",
-      "answer": "answer"
-    },
-    {
-      "id":2,
-      "question": "question?",
-      "answer": "answer"
-    },
-    {
-      "id":3,
-      "question": "question?",
-      "answer": "answer"
-    }]
   }
 ]

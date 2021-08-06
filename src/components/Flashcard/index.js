@@ -67,6 +67,7 @@ const Flashcard = () => {
     setIndex(0)
   }
 
+  // adds current question to array of questions to review
   const reviewQuestionClick = () => {
     setReviewQuestionList(reviewQuestionList => [...reviewQuestionList, currentQuestion])
     nextQuestionClick();
@@ -82,7 +83,9 @@ const Flashcard = () => {
       <div className="flashcard">
         <div className="flashcard-container" onClick={() => setFlip(!flip)}>
           <div className="flashcard-text">
-            {flip ? <div className="front">{ currentQuestion ? currentQuestion.answer : `Loading...`}</div> : <div className="back">{ currentQuestion ? currentQuestion.question : `Loading...`}</div>}
+            { flip ? <div className="front">
+              { currentQuestion ? <><div>{currentQuestion.answer}</div><div>{currentQuestion.english}</div></> : `Loading...` }</div> : <div className="back">{ currentQuestion ? currentQuestion.question : `Loading...` }</div> 
+            }
           </div>
         </div>
         <div className="flashcard-button-container">

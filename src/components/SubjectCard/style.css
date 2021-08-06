@@ -1,0 +1,12 @@
+.card-content {
+  font-size: 1.3em;
+}
+
+.subject-card a, .subject-card a:visited, .subject-card a:active {
+  color: black;
+}
+
+.subject-card:hover {
+  filter: brightness(85%);
+  transition: ease 0.3s;
+}

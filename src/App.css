@@ -1,0 +1,10 @@
+.hero-body .title {
+  color: rgb(26, 26, 26);
+  font-size: 2.75em;
+}
+
+@media only screen and (max-width: 600px) {
+  .hero-body .title {
+    font-size: 2em;
+  }
+} 
