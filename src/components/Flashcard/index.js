@@ -27,6 +27,8 @@ const Flashcard = () => {
   const [index, setIndex] = useState(0);
   const [flip, setFlip] = useState(false);
   const [reviewQuestionList, setReviewQuestionList] = useState([])
+  const [count, setCount] = useState(0);
+  const [total] = useState(questionArray.length)
 
   // Load questionArray on start
   useEffect(()=>{
@@ -34,13 +36,13 @@ const Flashcard = () => {
     setCurrentQuestion(questionList[0])
   },[])
 
-  useEffect(() => {
-    console.log(questionList);
-    console.log(questionList.length)
-    console.log(currentQuestion)
-    console.log(reviewQuestionList)
-    console.log(index)
-  }, [questionList, currentQuestion, reviewQuestionList, index]);
+  // useEffect(() => {
+  //   console.log(questionList);
+  //   console.log(questionList.length)
+  //   console.log(currentQuestion)
+  //   console.log(reviewQuestionList)
+  //   console.log(index)
+  // }, [questionList, currentQuestion, reviewQuestionList, index]);
 
   const nextQuestionClick = () => {
     let i = questionList.indexOf(questionList[index])
@@ -48,12 +50,13 @@ const Flashcard = () => {
     if ( i >= 0 && i < questionList.length) {
       setCurrentQuestion(questionList[i + 1]);
       setIndex(index => index + 1)
+      setCount(count => count + 1)
       setFlip(false);
     } else if (reviewQuestionList.length > 0) {
-      setQuestionList(reviewQuestionList)
-      setReviewQuestionList([])
-      setCurrentQuestion(questionList[0])
-      setIndex(0)
+      setQuestionList(reviewQuestionList);
+      setReviewQuestionList([]);
+      setCurrentQuestion(questionList[0]);
+      setIndex(0);
       setFlip(false);
     } else {
       restartQuestionClick()
@@ -65,11 +68,13 @@ const Flashcard = () => {
     setQuestionList(shuffle(questionArray));
     setCurrentQuestion(questionList[0])
     setIndex(0)
+    setCount(0)
   }
 
   // adds current question to array of questions to review
   const reviewQuestionClick = () => {
-    setReviewQuestionList(reviewQuestionList => [...reviewQuestionList, currentQuestion])
+    setReviewQuestionList(reviewQuestionList => [...reviewQuestionList, currentQuestion]);
+    setCount(count => count - 1);
     nextQuestionClick();
   }
 
@@ -81,6 +86,7 @@ const Flashcard = () => {
         </div>
       </div>
       <div className="flashcard">
+        <progress className="progress is-success" value={count} max={total}>{count / total}</progress>
         <div className="flashcard-container" onClick={() => setFlip(!flip)}>
           <div className="flashcard-text">
             { flip ? <div className="front">
