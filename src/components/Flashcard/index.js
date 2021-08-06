@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react';
 import { useLocation } from 'react-router-dom';
-import './style.css'
+import FlashcardCard from '../FlashcardCard';
+import SentenceCard from '../SentenceCard';
+import './style.css';
 
 // Shuffle function
 const shuffle = (array) => {
@@ -17,7 +19,6 @@ const shuffle = (array) => {
   }
   return array;
 }
-
 
 const Flashcard = () => {
   const { subject } = useLocation().state;
@@ -78,6 +79,12 @@ const Flashcard = () => {
     nextQuestionClick();
   }
 
+
+  // changes state of flip to opposite
+  const handleFlip = () => {
+    setFlip(!flip)
+  }
+
   return( 
     <div>
       <div className="hero is-small">
@@ -87,17 +94,20 @@ const Flashcard = () => {
       </div>
       <div className="flashcard">
         <progress className="progress is-success" value={count} max={total}>{count / total}</progress>
-        <div className="flashcard-container" onClick={() => setFlip(!flip)}>
-          <div className="flashcard-text">
-            { flip ? <div className="front">
-              { currentQuestion ? <><div>{currentQuestion.answer}</div><div>{currentQuestion.english}</div></> : `Loading...` }</div> : <div className="back">{ currentQuestion ? currentQuestion.question : `Loading...` }</div> 
-            }
-          </div>
-        </div>
-        <div className="flashcard-button-container">
-          <button className="button" onClick={nextQuestionClick}>{index < questionList.length ? 'Next Question' : 'Restart'}</button>
-          {currentQuestion ? <button className="button" onClick={reviewQuestionClick}>trash</button> : ''}
-        </div>
+        { subject.type === "flashcard" ? 
+        <FlashcardCard 
+          flip={flip}
+          handleFlip={handleFlip}
+          currentQuestion={currentQuestion}
+          nextQuestionClick={nextQuestionClick}
+          index={index}
+          questionList={questionList}
+          reviewQuestionClick={reviewQuestionClick}
+        /> :
+        <SentenceCard
+          currentQuestion={currentQuestion}
+        />
+        }
       </div>
     </div>
   )

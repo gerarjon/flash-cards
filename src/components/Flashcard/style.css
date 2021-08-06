@@ -15,7 +15,7 @@
 
 .flashcard-container {
   cursor: pointer;
-  width: 500px;
+  width: 600px;
   height: 400px;
   margin: auto;
   background-color: rgb(255, 255, 255);
@@ -25,7 +25,8 @@
 
 .flashcard-text {
   font-size: 2.5rem;
-  padding-top: 30%;
+  padding-top: 25%;
+  margin: 0 2rem;
 }
 
 .flashcard-button-container {
@@ -50,6 +51,7 @@
   }
 
   .flashcard-text {
-    padding-top: 40%;
+    padding-top: 35%;
+    margin: 0;
   }
 } 
