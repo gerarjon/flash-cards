@@ -73,6 +73,7 @@ const Flashcard = () => {
     setIndex(0)
     setCount(0)
     setIsCorrect('')
+    setFlip(false)
   }
 
   // adds current question to array of questions to review
