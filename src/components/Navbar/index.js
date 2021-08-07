@@ -17,6 +17,9 @@ export default function Navbar() {
         <div className="navbar-start">
           <Link className="navbar-item" to ="/">Home</Link>
         </div>
+        <div className="navbar-end">
+          <a className="navbar-item" target="_blank" href="https://github.com/gerarjon/flash-cards">Github</a>
+        </div>
       </div>
     </Container>
   </nav>
