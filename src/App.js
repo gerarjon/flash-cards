@@ -6,21 +6,22 @@ import MainPage from './pages/MainPage';
 import Container from './components/Container';
 import Navbar from './components/Navbar';
 import Flashcard from './components/Flashcard';
+import createBrowserHistory from 'history/createBrowserHistory';
+
+const history = createBrowserHistory({ basename: '/flash-cards' });
 
 class App extends Component {
   render() {
     return (
-      <BrowserRouter basename="/flash-cards">
-        <Router basename="/flash-cards">
-          <Navbar />
-          <Container>
-            <Switch>
-              <Route exact path='/' component={MainPage} />
-              <Route exact path="/:name" component={Flashcard} />;
-            </Switch>
-          </Container>
-        </Router>
-      </BrowserRouter>
+      <Router history={history}>
+        <Navbar />
+        <Container>
+          <Switch>
+            <Route exact path='/' component={MainPage} />
+            <Route exact path="/:name" component={Flashcard} />;
+          </Switch>
+        </Container>
+      </Router>
     );
   }
 }
