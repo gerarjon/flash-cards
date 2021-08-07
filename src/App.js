@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter, BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'bulma/css/bulma.min.css';
 import './App.css';
 import MainPage from './pages/MainPage';
@@ -10,6 +10,7 @@ import Flashcard from './components/Flashcard';
 class App extends Component {
   render() {
     return (
+      <BrowserRouter basename="/flash-cards">
         <Router basename="/flash-cards">
           <Navbar />
           <Container>
@@ -19,6 +20,7 @@ class App extends Component {
             </Switch>
           </Container>
         </Router>
+      </BrowserRouter>
     );
   }
 }
