@@ -6,14 +6,11 @@ import MainPage from './pages/MainPage';
 import Container from './components/Container';
 import Navbar from './components/Navbar';
 import Flashcard from './components/Flashcard';
-import createBrowserHistory from 'history/createBrowserHistory';
-
-const history = createBrowserHistory({ basename: '/flash-cards' });
 
 class App extends Component {
   render() {
     return (
-      <Router history={history}>
+      <Router basename='/flash-cards'>
         <Navbar />
         <Container>
           <Switch>
