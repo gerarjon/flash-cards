@@ -10,7 +10,7 @@ import Flashcard from './components/Flashcard';
 class App extends Component {
   render() {
     return (
-        <Router>
+        <Router basename="/flash-cards">
           <Navbar />
           <Container>
             <Switch>

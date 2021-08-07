@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="navbar-brand">
         <div className="navbar-item">
           <Link to="/">
-            {/* <img src={FLASHCARDlogo} alt="logo" className="logo" /> */}
+            <img src={FLASHCARDlogo} alt="logo" className="logo" />
           </Link>
         </div>
       </div>
@@ -22,7 +22,7 @@ export default function Navbar() {
           <Link className="navbar-item" to ="/">Home</Link>
         </div>
         <div className="navbar-end">
-          <a className="navbar-item" target="_blank" href="https://github.com/gerarjon/flash-cards">Github</a>
+          <a className="navbar-item" target="_blank" rel="noreferrer" href="https://github.com/gerarjon/flash-cards">Github</a>
         </div>
       </div>
     </Container>
