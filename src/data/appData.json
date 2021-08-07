@@ -311,7 +311,7 @@
   { 
     "id": 1.4,
     "type":"flashcard",
-    "name": "Phrases(Flashcard)",
+    "name": "Phrases-Card",
     "card": [
     {
       "id":1,
@@ -332,7 +332,7 @@
   { 
     "id": 1.5,
     "type":"submit",
-    "name": "Phrases(Submit)",
+    "name": "Phrases-Submit",
     "card": [
     {
       "id":1,

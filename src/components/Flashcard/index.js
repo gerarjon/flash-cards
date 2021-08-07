@@ -134,8 +134,8 @@ const Flashcard = () => {
         />
         }
         <div className="flashcard-button-container">
-          <button className="button" onClick={nextQuestionClick}>{index < questionList.length ? 'Next Question' : 'Restart'}</button>
-          {currentQuestion ? <button className="button" onClick={reviewQuestionClick}>trash</button> : ''}
+          <button className="button" onClick={nextQuestionClick}>{index < questionList.length ? 'Next Card' : 'Restart'}</button>
+          {currentQuestion ? <button className="button" onClick={reviewQuestionClick}>Set aside</button> : ''}
         </div>
       </div>
     </div>
