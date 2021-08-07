@@ -1,6 +1,8 @@
 import React from "react"
 import { Link } from 'react-router-dom';
 import Container from "../Container";
+import FLASHCARDlogo from "../../FLASHCARDlogo.png"
+import "./style.css"
 
 export default function Navbar() {
  return(
@@ -8,7 +10,9 @@ export default function Navbar() {
     <Container>
       <div className="navbar-brand">
         <div className="navbar-item">
-          <Link to="/">Flash Card</Link>
+          <Link to="/">
+            <img src={FLASHCARDlogo} alt="logo" className="logo" />
+          </Link>
         </div>
       </div>
 
