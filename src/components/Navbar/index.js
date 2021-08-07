@@ -11,7 +11,7 @@ export default function Navbar() {
       <div className="navbar-brand">
         <div className="navbar-item">
           <Link to="/">
-            <img src={FLASHCARDlogo} alt="logo" className="logo" />
+            {/* <img src={FLASHCARDlogo} alt="logo" className="logo" /> */}
           </Link>
         </div>
       </div>
