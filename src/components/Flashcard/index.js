@@ -46,10 +46,8 @@ const Flashcard = () => {
 
   // go to next question function
   const nextQuestionClick = () => {
-    let i = questionList.indexOf(questionList[index])
-
-    if ( i >= 0 && i < questionList.length) {
-      setCurrentQuestion(questionList[i + 1]);
+    if ( index >= 0 && index < questionList.length) {
+      setCurrentQuestion(questionList[index + 1]);
       setIndex(index => index + 1);
       setCount(count => count + 1);
       setFlip(false)
@@ -57,10 +55,11 @@ const Flashcard = () => {
       setShowAnswer(false)
       setSubmittedAnswer('')
     } else if (reviewQuestionList.length > 0) {
+      setCurrentQuestion(questionList[0]);
       setQuestionList(reviewQuestionList);
       setReviewQuestionList([]);
-      setCurrentQuestion(questionList[0]);
       setIndex(0);
+      setFlip(false)
     } else {
       restartQuestionClick()
     }
@@ -68,8 +67,9 @@ const Flashcard = () => {
 
   // resets questionList, index, and sets currentQuestion to first question
   const restartQuestionClick = () => {
-    setQuestionList(shuffle(questionArray));
-    setCurrentQuestion(questionList[0])
+    let temp = shuffle(questionArray)
+    setQuestionList(temp)
+    setCurrentQuestion(temp[0])
     setIndex(0)
     setCount(0)
     setIsCorrect('')
