@@ -12,7 +12,7 @@ Users have the ability to view cards with text on the front and the back. They c
 Another feature is that users attempt to write the phrase or question in English. Punctuation and capitalization is not necessary, the words just need to be in the correct order and spelling. The submit questions have the same feature as the flashcard questions. 
 
 ## Main techonologies
-* [Bulma](https://bulma.io/)
+* [Bulma](https://bulma.io/) - for CSS 
 
 ## Suggestions
 Suggestions for further improvement in terms of usability, design, and type of questions are encouraged! Things that are in development: 
@@ -40,3 +40,5 @@ You will also see any lint errors in the console.
 
 ## Author
 **Gerar Suaverdez** - [GitHub Profile](https://github.com/gerarjon)
+
+Special thanks to [John Nguyen](https://github.com/jvn1567) for assisting with bug finding and testing despite not knowing React.
