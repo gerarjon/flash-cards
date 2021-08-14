@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { BrowserRouter, BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
 import 'bulma/css/bulma.min.css';
 import './App.css';
 import MainPage from './pages/MainPage';
