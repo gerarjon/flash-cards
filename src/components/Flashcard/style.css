@@ -1,6 +1,12 @@
 .progress.is-success::-moz-progress-bar{
   background-color: rgb(31, 124, 231)
 }
+.progress.is-success::-ms-fill{
+  background-color: rgb(31, 124, 231)
+}
+.progress.is-success::-webkit-progress-value{
+  background-color: rgb(31, 124, 231)
+}
 
 .progress {
   margin: 0 auto;
